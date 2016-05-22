@@ -4,6 +4,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Coveralls Status][coveralls-image]][coveralls-url]
 [![Dependency Status][depstat-image]][depstat-url]
+[![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
 > get content from markdown article
 
@@ -74,3 +75,6 @@ MIT © [Aleksandr Filatov](https://alfilatov.com)
 
 [depstat-url]: https://david-dm.org/greybax/md-content
 [depstat-image]: https://david-dm.org/greybax/md-content.svg?style=flat-square
+
+[depstat-dev-url]: https://david-dm.org/greybax/md-content
+[depstat-dev-image]: https://david-dm.org/greybax/md-content/dev-status.svg?style=flat-square
