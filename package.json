@@ -1,5 +1,5 @@
 {
-  "name": "get-md-content",
+  "name": "md-content",
   "version": "1.0.1",
   "description": "NPM package for getting content from markdown article",
   "main": "index.es5.js",
