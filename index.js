@@ -1,19 +1,10 @@
-import { text, matchRemoveList } from 'commonmark-helpers';
-import { is } from 'ramda';
+import markdown from 'remark-parse';
 import remark from 'remark';
 import html from 'remark-html';
 
-const wrap = item =>
-  (is(String, item) || is(RegExp, item))
-    ? node => text(node).match(item)
-    : item;
-
-export default (input, removeList = []) => {
-  const node = matchRemoveList(input, ...removeList.map(wrap).filter(is(Function)));
-  if (!node) return;
+export default (input) => {
+  let mdast = remark().use(markdown).process(input);
   return {
-    text: text(node),
-    html: remark().use(html).process(text(node)),
-    node
+    html: remark().use(html).process(mdast)
   };
 };

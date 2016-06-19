@@ -17,32 +17,26 @@
 ```js
 import getContent from 'md-content';
 
-const isHeader = node => node.type === 'Header'; // small helper function
+const content_with_header_and_img = `
+![alt](http://yo.io/)
 
-const simple = `
-# header
+content1
 
-content`;
+content2
+## header2`;
 
-// simple get content without header
-getContent(simple, ['header']).text); // content
-getContent(simple, [/header/]).text); // content
-getContent(simple, [isHeader]).text); // content
+getContent(content_with_header_and_img).html
 
-const basic = `
-# header
-20 December 2012
+// <p><img src="http://yo.io/" alt="alt"></p>
+// <p>content1</p>
+// <p>content2</p>
+// <h2>header2</h2>
 
-content
-with two paragraphs`;
-
-// basic get content without header and date
-getContent(basic, [/header/, /december/gim]).text; // content\nwith two paragraphs
 ```
 
 ## API
 
-### getContent(input, removeList)
+### getContent(input)
 
 #### input
 
@@ -50,15 +44,6 @@ getContent(basic, [/header/, /december/gim]).text; // content\nwith two paragrap
 Type: `String`
 
 Markdown string.
-
-#### removeList
-
-Type: `Array` of `Function || RegExp || String`  
-Default: `[]`
-
-Matched nodes will be removed.  
-`String` or `RegExp` will be matched against plaintext markdown nodes.  
-`Function` takes commonmark `node` as a first param, and ast iteration `event` as a second param. Check out [commonmark-helpers shortcuts](https://www.npmjs.com/package/commonmark-helpers#bunch-of-shortcut-helpers) and [commonmark api](https://github.com/jgm/commonmark.js#usage)
 
 ## License
 

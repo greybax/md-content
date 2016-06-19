@@ -1,6 +1,6 @@
 {
   "name": "md-content",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NPM package for getting content from markdown article",
   "main": "index.es5.js",
   "scripts": {
@@ -46,9 +46,8 @@
     "should": "^8.4.0"
   },
   "dependencies": {
-    "commonmark-helpers": "^0.4.1",
-    "ramda": "^0.21.0",
     "remark": "^4.2.2",
-    "remark-html": "^3.0.0"
+    "remark-html": "^3.0.0",
+    "remark-parse": "^1.0.0"
   }
 }
