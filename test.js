@@ -1,6 +1,5 @@
 import { equal } from 'assert';
 import expect from 'expect';
-import { isHeader } from 'commonmark-helpers';
 import getContent from './index';
 
 const basic = `
