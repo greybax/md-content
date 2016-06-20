@@ -11,6 +11,9 @@ content
 with two paragraphs`
 
 const content_with_header_and_img = `
+# header
+20 December 2012
+
 ![alt](http://yo.io/)
 
 content1
@@ -35,7 +38,7 @@ it('should getContent with img and h2', () =>
 `));
 
 it('should getContent with <table> html tag', () =>
-  expect(getContent(table).html).toInclude('<table>'));
+  expect(getContent(table).html).toMatch(/<table>/));
 
 it('should getContent with <del> html tag', () =>
-  expect(getContent(strikethrough).html).toInclude('<del>'));
+  expect(getContent(strikethrough).html).toMatch(/<del>/));
