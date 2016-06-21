@@ -2,11 +2,12 @@ import { equal } from 'assert';
 import expect from 'expect';
 import getContent from './index';
 
-const basic = `
+const basic_italicized_date = `
 # header
-20 December 2012
+_20 December 2012_
 
 content
+
 with two paragraphs`
 
 const content_with_header_and_img = `
@@ -28,7 +29,19 @@ const table = `
 const strikethrough = `
 ~~text~~`;
 
-it('should getContent with img and h2', () =>
+it('should getContent(basic_italicized_date) html without header and date', () =>
+  equal(getContent(basic_italicized_date).html,
+`<p>content</p>
+<p>with two paragraphs</p>
+`));
+
+it('should getContent(basic_italicized_date) plain text ', () =>
+  equal(getContent(basic_italicized_date).text,
+`content
+with two paragraphs`
+));
+
+it('should getContent(content_with_header_and_img) html with img and h2', () =>
   equal(getContent(content_with_header_and_img).html,
 `<p><img src="http://yo.io/" alt="alt"></p>
 <p>content1</p>
@@ -36,8 +49,14 @@ it('should getContent with img and h2', () =>
 <h2>header2</h2>
 `));
 
-it('should getContent with <table> html tag', () =>
+it('should getContent(content_with_header_and_img) plain text', () =>
+  equal(getContent(content_with_header_and_img).text,
+`content1
+content2
+header2`));
+
+it('should getContent(table) with <table> html tag', () =>
   expect(getContent(table).html).toMatch(/<table>/));
 
-it('should getContent with <del> html tag', () =>
+it('should getContent(strikethrough) with <del> html tag', () =>
   expect(getContent(strikethrough).html).toMatch(/<del>/));
