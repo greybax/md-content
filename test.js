@@ -4,7 +4,7 @@ import getContent from './index';
 
 const basic_italicized_date = `
 # header
-_20 December 2012_
+_20 June 2016_
 
 content
 
@@ -12,7 +12,7 @@ with two paragraphs`
 
 const content_with_header_and_img = `
 # header
-20 December 2012
+20 June 2016
 
 ![alt](http://yo.io/)
 
