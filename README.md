@@ -18,6 +18,9 @@
 import getContent from 'md-content';
 
 const content_with_header_and_img = `
+# header
+_20 June 2016_
+
 ![alt](http://yo.io/)
 
 content1
@@ -26,12 +29,16 @@ content2
 ## header2`;
 
 getContent(content_with_header_and_img).html
-
 // <p><img src="http://yo.io/" alt="alt"></p>
 // <p>content1</p>
 // <p>content2</p>
 // <h2>header2</h2>
 
+getContent(content_with_header_and_img).text
+// <img src="http://yo.io/" alt="alt">
+// content1
+// content2
+// header2
 ```
 
 ## API

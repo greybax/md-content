@@ -8,13 +8,13 @@ var remark = remarkAbstract();
 const isHeader = (node) => {
     return node.type === "heading" && node.depth === 1;
 }
-const isDate = (format, locale, node) => {
-    let date = node.children[0].value
-        ? node.children[0].value
-        : node.children[0].children 
-            ? node.children[0].children[0].value
-            : node.children[0].value;
-    return moment(date, format, locale, true).isValid();
+const isDate = (node) => {
+    if (node.value) {
+        return moment(node.value).isValid();
+    }
+    else if (node.children) {
+        return isDate(node.children[0]);
+    }
 }
 
 export default (input, removeList = []) => {
@@ -25,7 +25,7 @@ export default (input, removeList = []) => {
     let clonedAst = { type: "root", children: [] };
 
     for (let i = 0; i < astChild.length; i++) {
-        if (isHeader(astChild[i]) || isDate('DD MMMM YYYY', 'en', astChild[i])) {
+        if (isHeader(astChild[i]) || isDate(astChild[i])) {
             continue;
         }
         clonedAst.children.push(astChild[i]);

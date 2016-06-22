@@ -10,6 +10,14 @@ content
 
 with two paragraphs`
 
+const basic_italicized_date2 = `
+# header
+_June 21, 2016_
+
+content
+
+with two paragraphs`
+
 const content_with_header_and_img = `
 # header
 20 June 2016
@@ -37,6 +45,18 @@ it('should getContent(basic_italicized_date) html without header and date', () =
 
 it('should getContent(basic_italicized_date) plain text ', () =>
   equal(getContent(basic_italicized_date).text,
+`content
+with two paragraphs`
+));
+
+it('should getContent(basic_italicized_date) html without header and date', () =>
+  equal(getContent(basic_italicized_date2).html,
+`<p>content</p>
+<p>with two paragraphs</p>
+`));
+
+it('should getContent(basic_italicized_date) plain text ', () =>
+  equal(getContent(basic_italicized_date2).text,
 `content
 with two paragraphs`
 ));
