@@ -41,6 +41,8 @@ getContent(content_with_header_and_img).text
 // header2
 ```
 
+Also could highlight syntax with [highlight.js](https://github.com/ben-eb/remark-highlight.js) if it has in your markdown.
+
 ## API
 
 ### getContent(input)
