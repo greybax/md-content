@@ -1,10 +1,8 @@
-var remarkAbstract = require("remark");
+var remark = require("remark");
 var html = require("remark-html");
 var hljs  = require('remark-highlight.js');
 var moment = require("moment");
 var striptags = require("striptags");
-
-var remark = remarkAbstract();
 
 // TODO: Need to move it to helper functions
 const isHeader = (node) => {
@@ -24,21 +22,19 @@ const isDate = (node) => {
 }
 
 export default (input) => {
-    let remark = remarkAbstract();
-    let ast = remark.parse(input);
-    var astChild = ast.children;
+    let ast = remark().parse(input).children;
 
     let clonedAst = { type: "root", children: [] };
 
-    for (let i = 0; i < astChild.length; i++) {
-        if (isHeader(astChild[i]) || isDate(astChild[i])) {
+    for (let i = 0; i < ast.length; i++) {
+        if (isHeader(ast[i]) || isDate(ast[i])) {
             continue;
         }
-        clonedAst.children.push(astChild[i]);
+        clonedAst.children.push(ast[i]);
     }
 
-    let md = remark.stringify(clonedAst);
-    let dom = remark.use([ html, hljs ]).process(md).contents;
+    let md = remark().stringify(clonedAst);
+    let dom = remark().use([html, hljs]).process(md).contents;
     return {
         text: striptags(dom).trim(),
         html: dom,
