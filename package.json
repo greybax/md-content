@@ -22,7 +22,6 @@
   "keywords": [
     "md",
     "markdown",
-    "commonmark",
     "article",
     "content"
   ],
@@ -48,7 +47,6 @@
   "dependencies": {
     "moment": "^2.13.0",
     "remark": "^5.0.1",
-    "remark-highlight.js": "^3.1.1",
     "remark-html": "^4.0.0",
     "striptags": "^2.1.1"
   }

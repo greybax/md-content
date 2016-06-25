@@ -1,6 +1,5 @@
 var remark = require("remark");
 var html = require("remark-html");
-var hljs  = require('remark-highlight.js');
 var moment = require("moment");
 var striptags = require("striptags");
 
@@ -34,7 +33,7 @@ export default (input) => {
     }
 
     let md = remark().stringify(clonedAst);
-    let dom = remark().use([html, hljs]).process(md).contents;
+    let dom = remark().use(html).process(md).contents;
     return {
         text: striptags(dom).trim(),
         html: dom,
