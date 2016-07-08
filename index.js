@@ -7,6 +7,8 @@ var striptags = require("striptags");
 const isHeader = (node) => {
     return node.type === "heading" && node.depth === 1;
 }
+
+// TODO: Need to move it to helper functions
 const isDate = (node) => {
     if (!node.value && !node.children) {
         return false;

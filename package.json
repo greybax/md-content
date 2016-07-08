@@ -45,9 +45,9 @@
     "should": "^9.0.2"
   },
   "dependencies": {
-    "moment": "^2.13.0",
+    "moment": "^2.14.1",
     "remark": "^5.0.1",
-    "remark-html": "^4.0.0",
+    "remark-html": "^5.0.0",
     "striptags": "^2.1.1"
   }
 }

@@ -52,6 +52,13 @@ Type: `String`
 
 Markdown string.
 
+## Related
+
+* [md-article][md-article] - extract data from your markdown article
+    * [md-title][md-title] - get title from markdown article
+    * [md-date][md-date] - get date from markdown article
+    * [md-desc][md-desc] - get description from markdown article
+
 ## License
 
 MIT © [Aleksandr Filatov](https://alfilatov.com)
@@ -70,3 +77,8 @@ MIT © [Aleksandr Filatov](https://alfilatov.com)
 
 [depstat-dev-url]: https://david-dm.org/greybax/md-content
 [depstat-dev-image]: https://david-dm.org/greybax/md-content/dev-status.svg?style=flat-square
+
+[md-article]: https://github.com/greybax/md-article
+[md-title]: https://github.com/greybax/md-title
+[md-date]: https://github.com/greybax/md-date
+[md-desc]: https://github.com/greybax/md-desc
