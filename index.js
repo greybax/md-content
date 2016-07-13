@@ -9,6 +9,15 @@ const isHeader = (node) => {
 }
 
 // TODO: Need to move it to helper functions
+const isTag = (node) => {
+    return node.type === "paragraph"
+        && node.children[0]
+        && node.children[0].type === "text"
+        && node.children[0].value.startsWith("#")
+        && node.children[0].value.endsWith(";");
+}
+
+// TODO: Need to move it to helper functions
 const isDate = (node) => {
     if (!node.value && !node.children) {
         return false;
@@ -28,7 +37,7 @@ export default (input) => {
     let clonedAst = { type: "root", children: [] };
 
     for (let i = 0; i < ast.length; i++) {
-        if (isHeader(ast[i]) || isDate(ast[i])) {
+        if (isHeader(ast[i]) || isDate(ast[i]) || isTag(ast[i])) {
             continue;
         }
         clonedAst.children.push(ast[i]);

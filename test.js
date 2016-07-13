@@ -6,6 +6,8 @@ const basic_italicized_date = `
 # header
 _20 June 2016_
 
+#tag1 #tag2 #tag3;
+
 content
 
 with two paragraphs`
