@@ -21,6 +21,8 @@ const content_with_header_and_img = `
 # header
 _20 June 2016_
 
+#tag1 #tag #tag3;
+
 ![alt](http://yo.io/)
 
 content1
@@ -57,7 +59,7 @@ Markdown string.
 * [md-article][md-article] - extract data from your markdown article
     * [md-title][md-title] - get title from markdown article
     * [md-date][md-date] - get date from markdown article
-    * [md-desc][md-desc] - get description from markdown article
+    * [md-tags][md-tags] - get tags from markdown article
 
 ## License
 
@@ -81,4 +83,4 @@ MIT © [Aleksandr Filatov](https://alfilatov.com)
 [md-article]: https://github.com/greybax/md-article
 [md-title]: https://github.com/greybax/md-title
 [md-date]: https://github.com/greybax/md-date
-[md-desc]: https://github.com/greybax/md-desc
+[md-tags]: https://github.com/greybax/md-tags
