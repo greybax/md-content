@@ -42,24 +42,26 @@ const strikethrough = `
 it('should getContent(basic_italicized_date) html without header and date', () =>
   equal(getContent(basic_italicized_date).html,
 `<p>content</p>
-<p>with two paragraphs</p>
-`));
+<p>with two paragraphs</p>`
+));
 
 it('should getContent(basic_italicized_date) plain text ', () =>
   equal(getContent(basic_italicized_date).text,
 `content
+
 with two paragraphs`
 ));
 
 it('should getContent(basic_italicized_date) html without header and date', () =>
   equal(getContent(basic_italicized_date2).html,
 `<p>content</p>
-<p>with two paragraphs</p>
-`));
+<p>with two paragraphs</p>`
+));
 
 it('should getContent(basic_italicized_date) plain text ', () =>
   equal(getContent(basic_italicized_date2).text,
 `content
+
 with two paragraphs`
 ));
 
@@ -68,14 +70,17 @@ it('should getContent(content_with_header_and_img) html with img and h2', () =>
 `<p><img src="http://yo.io/" alt="alt"></p>
 <p>content1</p>
 <p>content2</p>
-<h2>header2</h2>
-`));
+<h2>header2</h2>`
+));
 
 it('should getContent(content_with_header_and_img) plain text', () =>
   equal(getContent(content_with_header_and_img).text,
 `content1
+
 content2
-header2`));
+
+header2`
+));
 
 it('should getContent(table) with <table> html tag', () =>
   expect(getContent(table).html).toMatch(/<table>/));
