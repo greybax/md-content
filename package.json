@@ -45,6 +45,6 @@
   },
   "dependencies": {
     "moment": "^2.14.1",
-    "remark-helpers": "0.0.5"
+    "remark-helpers": "0.0.6"
   }
 }
