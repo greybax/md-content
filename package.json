@@ -41,7 +41,7 @@
     "isparta": "*",
     "mocha": "*",
     "npm-run-all": "*",
-    "rimraf": "*"
+    "rimraf": ">=2.6.3"
   },
   "dependencies": {
     "moment": "^2.14.1",
