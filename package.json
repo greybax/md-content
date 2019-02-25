@@ -39,7 +39,7 @@
     "coveralls": "*",
     "expect": "^1.20.2",
     "isparta": "*",
-    "mocha": "*",
+    "mocha": ">=6.0.2",
     "npm-run-all": "*",
     "rimraf": "*"
   },
